@@ -1,0 +1,124 @@
+body {
+    font-family: 'MuseoModerno';
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 18px;
+    font-style: normal;
+    padding: 10px;
+    margin: 0;
+    transition: background-color 0.3s;
+    background-color: #333;
+    color: #fff;      
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.TextNameChild {
+    flex: 1;
+    text-align: center;
+}
+
+.TextNameChild p {
+    margin: 0;
+    font-size: 24px; /* Размер шрифта */
+}
+
+.logo-image {
+    position: absolute;
+    left: 20px;
+    border-radius: 10%;
+    width: 40px;
+    height: 40px;
+}
+
+/* Стили для сайдбара */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Стили для ссылок в сайдбаре */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* При наведении мыши ссылки будут менять цвет */
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+/* Кнопка закрытия сайдбара */
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Стиль для кнопки, которая будет открывать сайдбар */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+/* Стиль для основного содержимого страницы, когда сайдбар открыт */
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+/* Добавьте медиа-запросы для того, чтобы сайдбар был меньше на маленьких экранах */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
