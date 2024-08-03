@@ -1,62 +1,109 @@
 body {
-    font-family: 'MuseoModerno';
-    font-optical-sizing: auto;
-    font-weight: 300;
+    font-family: 'MuseoModerno', sans-serif;
     font-size: 18px;
-    font-style: normal;
-    padding: 10px;
     margin: 0;
+    padding: 0;
     transition: background-color 0.3s;
-    background-color: #333;
-    color: #fff;      
+    background-color: #222;
+    color: #fff;
 }
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 10px;
-    position: relative;
+    background-color: #333;
+}
+
+header h1 {
+    color: #fff;
+    text-align: center;
+    margin: 0;
     width: 100%;
 }
 
-html, body {
+.logo-image {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#hero {
+    text-align: center;
+    padding: 50px;
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+}
+
+#hero h1 {
+    font-size: 3em;
     margin: 0;
-    padding: 0;
-    height: 100%;
+}
+
+#hero p {
+    font-size: 1.2em;
+}
+
+#shop {
+    padding: 20px;
+    text-align: center;
+}
+
+#shop h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
     width: 100%;
+    border-radius: 10px;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'MuseoModerno', sans-serif;
+}
+
+body {
     display: flex;
     flex-direction: column;
 }
 
-#logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    position: relative;
-}
-
-.TextNameChild {
+main {
     flex: 1;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
     text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-.TextNameChild p {
-    margin: 0;
-    font-size: 24px; /* Размер шрифта */
-}
-
-.logo-image {
-    position: absolute;
-    left: 20px;
-    border-radius: 10%;
-    width: 40px;
-    height: 40px;
-}
-
-/* Стили для сайдбара */
 .sidebar {
     height: 100%;
     width: 0;
@@ -68,12 +115,8 @@ html, body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-/* Стили для ссылок в сайдбаре */
 .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -83,42 +126,27 @@ html, body {
     transition: 0.3s;
 }
 
-/* При наведении мыши ссылки будут менять цвет */
 .sidebar a:hover {
     color: #f1f1f1;
 }
 
-/* Кнопка закрытия сайдбара */
 .sidebar .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
-    margin-left: 50px;
 }
 
-/* Стиль для кнопки, которая будет открывать сайдбар */
-.openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-}
-
-.openbtn:hover {
-    background-color: #444;
-}
-
-/* Стиль для основного содержимого страницы, когда сайдбар открыт */
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
-/* Добавьте медиа-запросы для того, чтобы сайдбар был меньше на маленьких экранах */
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
+}
+
+#about, #contact {
+    text-align: center;
+    padding: 20px;
+}
+
+#about p, #contact p {
+    font-size: 1.2em;
 }
