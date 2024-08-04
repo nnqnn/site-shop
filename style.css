@@ -246,3 +246,14 @@ main {
     color: var(--header-background);
     border-color: var(--header-background);
 }
+
+@media screen and (max-width: 768px) {
+    #product-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-images {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
