@@ -1,23 +1,47 @@
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --header-background: #ccc; /* Gray background for header in light theme */
+    --footer-background: #ccc; /* Gray background for footer in light theme */
+    --product-background: #fff;
+    --hover-color: rgb(59, 59, 59);
+    --box-shadow: rgba(0, 0, 0, 0.1);
+    --product-border: #000; /* Black border for products in light theme */
+}
+
+body.dark {
+    --background-color: #222;
+    --text-color: #fff;
+    --header-background: #333;
+    --footer-background: #333;
+    --product-background: #444;
+    --hover-color: rgb(195, 195, 195);
+    --box-shadow: rgba(255, 255, 255, 0.2);
+    --product-border: #fff; /* White border for products in dark theme */
+}
+
 body {
     font-family: 'MuseoModerno', sans-serif;
     font-size: 18px;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s;
-    background-color: #222;
-    color: #fff;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #333;
+    padding: 10px 20px;
+    background-color: var(--header-background);
+    box-shadow: 0 2px 5px var(--box-shadow);
+    transition: background-color 0.5s ease;
 }
 
 header h1 {
-    color: #fff;
+    color: var(--text-color);
     text-align: center;
     margin: 0;
     width: 100%;
@@ -31,48 +55,55 @@ header h1 {
 
 #hero {
     text-align: center;
-    padding: 50px;
+    padding: 100px 20px;
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: var(--text-color);
+    transition: color 0.5s ease;
 }
 
 #hero h1 {
-    font-size: 3em;
+    font-size: 4em;
     margin: 0;
 }
 
 #hero p {
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 #shop {
-    padding: 20px;
+    padding: 50px 20px;
     text-align: center;
+    background-color: var(--header-background);
+    transition: background-color 0.5s ease;
 }
 
 #shop h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    margin-bottom: 30px;
 }
 
 .product-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .product-item {
-    background-color: #333;
+    background-color: var(--product-background);
     padding: 20px;
+    border: 2px solid var(--product-border);
     border-radius: 10px;
     width: 200px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.5s ease;
     position: relative;
+    box-shadow: 0 4px 8px var(--box-shadow);
 }
 
 .product-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 16px var(--box-shadow);
 }
 
 .product-item img {
@@ -97,13 +128,15 @@ main {
 }
 
 .footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--footer-background);
+    color: var(--text-color);
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     position: relative;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -2px 5px var(--box-shadow);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .sidebar {
@@ -113,23 +146,24 @@ main {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: var(--header-background);
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: width 0.5s ease, background-color 0.5s ease;
     padding-top: 60px;
+    box-shadow: 2px 0 5px var(--box-shadow);
 }
 
 .sidebar a {
-    padding: 8px 8px 8px 32px;
+    padding: 10px 15px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 20px;
+    color: var(--text-color);
     display: block;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 .sidebar a:hover {
-    color: #f1f1f1;
+    color: var(--hover-color);
 }
 
 .sidebar .closebtn {
@@ -146,7 +180,10 @@ main {
 
 #about, #contact {
     text-align: center;
-    padding: 20px;
+    padding: 50px 20px;
+    background-color: var(--header-background);
+    transition: background-color 0.5s ease;
+    height: 100%;
 }
 
 #about p, #contact p {
@@ -190,4 +227,22 @@ main {
 
 .thumbnail-images img:hover {
     transform: scale(1.1);
+}
+
+.theme-toggle {
+    background: var(--product-background);
+    border: 2px solid var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px 15px;
+    margin-left: auto;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background: var(--hover-color);
+    color: var(--header-background);
+    border-color: var(--header-background);
 }
