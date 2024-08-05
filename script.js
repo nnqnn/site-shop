@@ -10,27 +10,27 @@ function closeNav() {
 
 const products = {
   "product1": {
-      "title": "Gothic Jacket",
-      "price": "$120.00",
-      "description": "This Gothic Jacket is perfect for making a statement. Made from high-quality materials, it ensures comfort and style. The intricate design and attention to detail make it a must-have for your wardrobe.",
+      "title": "CASHER x AMKAL",
+      "price": "$55.00",
+      "description": "CASHER x AMKAL Collaboration. Composition: 90% polyester, 10% spandex Fabric: Jersey Density: 210 gr/m² Cut: OVERSIZE Print: Sublimation Production: Russia",
       "images": ["pins/product1.jpg", "pins/product1_2.jpg", "pins/product1_3.jpg"]
   },
   "product2": {
-      "title": "Punk Boots",
-      "price": "$150.00",
-      "description": "These Punk Boots are bold and stylish, perfect for any punk rock outfit. Crafted from durable materials, they offer both comfort and longevity.",
+      "title": "CASHER x XXXMANERA",
+      "price": "$55.00",
+      "description": "CASHER x XXXMANERA Collaboration. Composition: 90% polyester, 10% spandex Fabric: Jersey Density: 210 gr/m² Cut: OVERSIZE Print: Sublimation Production: Russia",
       "images": ["pins/product2.jpg", "pins/product2_2.jpg", "pins/product2_3.jpg"]
   },
   "product3": {
-      "title": "Vintage Dress",
-      "price": "$80.00",
-      "description": "This Vintage Dress brings back the charm of the old days with a modern twist. Perfect for any occasion, it is sure to make you stand out.",
+      "title": "'Casher' Scarf Black",
+      "price": "$35.00",
+      "description": "The perfect choice to complete your look with style, this scarf is made of soft and warm material and is available in black, pink, green and red colors. This scarf will not only protect you from the cold, but will also become an expressive accent of the outfit. It will provide comfort and coziness in any weather, and the variety of colors will allow you to find the perfect shade to match your style and mood. A perfect choice for a gift for yourself or your loved ones to plunge into the world of coziness and luxury.",
       "images": ["pins/product3.jpg", "pins/product3_2.jpg", "pins/product3_3.jpg"]
   },
   "product4": {
-      "title": "Leather Gloves",
+      "title": "T-shirt 'Dollar 2.0' White",
       "price": "$50.00",
-      "description": "These Leather Gloves are the perfect accessory for any outfit. Made from premium leather, they provide both style and warmth.",
+      "description": "Dollar 2.0 in white under a white look is perfect as a base or as a standalone top piece",
       "images": ["pins/product4.jpg", "pins/product4_2.jpg", "pins/product4_3.jpg"]
   }
 };
@@ -90,11 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const themeToggle = document.createElement('button');
   themeToggle.className = 'theme-toggle';
-  themeToggle.innerText = 'Dark/Light';
   document.querySelector('header').appendChild(themeToggle);
 
   const applyTheme = (theme) => {
       document.body.classList.toggle('dark', theme === 'dark');
+      themeToggle.innerText = theme === 'dark' ? 'Light' : 'Dark';
       localStorage.setItem('theme', theme);
   };
 

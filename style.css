@@ -1,7 +1,7 @@
 :root {
-    --background-color: #f5f5f5;
-    --text-color: #333;
-    --header-background: #ccc; /* Gray background for header in light theme */
+    --background-color: #eee;
+    --text-color: #000000;
+    --header-background: #ffffff; /* Gray background for header in light theme */
     --footer-background: #ccc; /* Gray background for footer in light theme */
     --product-background: #fff;
     --hover-color: rgb(59, 59, 59);
@@ -21,7 +21,10 @@ body.dark {
 }
 
 body {
-    font-family: 'MuseoModerno', sans-serif;
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
     font-size: 18px;
     margin: 0;
     padding: 0;
@@ -71,7 +74,7 @@ header h1 {
 }
 
 #shop {
-    padding: 50px 20px;
+    padding: 100px;
     text-align: center;
     background-color: var(--header-background);
     transition: background-color 0.5s ease;
@@ -87,6 +90,7 @@ header h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    height: 100%;
 }
 
 .product-item {
@@ -99,6 +103,7 @@ header h1 {
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.5s ease;
     position: relative;
     box-shadow: 0 4px 8px var(--box-shadow);
+    text-transform: uppercase;
 }
 
 .product-item:hover {
@@ -115,7 +120,10 @@ header h1 {
 body, html {
     height: 100%;
     margin: 0;
-    font-family: 'MuseoModerno', sans-serif;
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 body {
@@ -148,9 +156,13 @@ main {
     left: 0;
     background-color: var(--header-background);
     overflow-x: hidden;
-    transition: width 0.5s ease, background-color 0.5s ease;
+    transition: width 0.2s ease, background-color 0.2s ease;
     padding-top: 60px;
     box-shadow: 2px 0 5px var(--box-shadow);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sidebar a {
@@ -159,7 +171,7 @@ main {
     font-size: 20px;
     color: var(--text-color);
     display: block;
-    transition: color 0.3s;
+    transition: color 0.1s;
 }
 
 .sidebar a:hover {
@@ -256,4 +268,26 @@ main {
         margin-right: 0;
         margin-bottom: 20px;
     }
+}
+
+.theme-toggle {
+    background: var(--product-background);
+    border: 2px solid var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    padding: 5px 15px;
+    margin-left: auto;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background: var(--hover-color);
+    color: var(--header-background);
+    border-color: var(--header-background);
 }
