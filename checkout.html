@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Shop - KKFlo</title>
+    <title>Checkout - KKFlo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,30 +28,35 @@
         </div>
     </header>
     <main>
-        <section id="shop">
-            <h2>Our Products</h2>
-            <div class="product-grid">
-                <div class="product-item" data-id="product1">
-                    <img src="pins/product1.jpg" alt="Product 1">
-                    <h3>CASHER x AMKAL</h3>
-                    <p>$55.00</p>
+        <section id="checkout">
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                <div class="product-item" data-id="product2">
-                    <img src="pins/product2.jpg" alt="Product 2">
-                    <h3>CASHER x XXXMANERA</h3>
-                    <p>$55.00</p>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                <div class="product-item" data-id="product3">
-                    <img src="pins/product3.jpg" alt="Product 3">
-                    <h3>'Casher' Scarf Black</h3>
-                    <p>$35.00</p>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
                 </div>
-                <div class="product-item" data-id="product4">
-                    <img src="pins/product4.jpg" alt="Product 4">
-                    <h3>T-shirt 'Dollar 2.0' White</h3>
-                    <p>$50.00</p>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="postal-code">Postal Code</label>
+                    <input type="text" id="postal-code" name="postal-code" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+                <button type="submit">Place Order</button>
+            </form>
         </section>
     </main>
     <footer class="footer">
