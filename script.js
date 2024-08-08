@@ -126,17 +126,21 @@ function openNav() {
             itemElement.className = 'cart-item';
             itemElement.innerHTML = `
                 <img src="${product.images[0]}" alt="${product.title}">
-                <div>
-                    <h3>${product.title}</h3>
-                    <p>${product.price}</p>
-                    <div class="quantity-controls">
-                        <button class="decrease-btn" data-id="${item.id}">-</button>
-                        <input type="number" class="quantity-input" data-id="${item.id}" value="${item.quantity}" min="1" max="5">
-                        <button class="increase-btn" data-id="${item.id}">+</button>
+                    <div class="cart-item-details">
+                        <h3>${product.title}</h3>
                     </div>
-                    <p> </p>
-                    <button class="remove-btn" data-id="${item.id}">Remove</button>
-                </div>
+                    <div class="cart-item-price">
+                        <p>${product.price}</p>
+                    </div>
+                    <div>
+                        <div class="quantity-controls">
+                            <button class="decrease-btn" data-id="${item.id}">-</button>
+                            <input type="number" class="quantity-input" data-id="${item.id}" value="${item.quantity}" min="1" max="5">
+                            <button class="increase-btn" data-id="${item.id}">+</button>
+                        </div>
+                        <p> </p>
+                        <button class="remove-btn" data-id="${item.id}">Remove</button>
+                    </div>
             `;
             cartItemsContainer.appendChild(itemElement);
             total += parseFloat(product.price.replace('$', '')) * item.quantity;
