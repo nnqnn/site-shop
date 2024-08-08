@@ -77,6 +77,11 @@ function openNav() {
             };
             thumbnailContainer.appendChild(thumbImg);
         });
+
+        document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+            alert("Товар добавлен в корзину!");
+            addToCart(productId);
+        });
   
         // Добавить обработчик событий для зума
         mainImage.addEventListener('click', () => {
@@ -212,33 +217,4 @@ function openNav() {
             }
         });
     }
-
-    if (window.location.pathname.endsWith('product.html')) {
-        const productId = new URLSearchParams(window.location.search).get('id');
-        const product = products[productId];
-
-        if (product) {
-            document.getElementById('main-image').src = product.images[0];
-            document.getElementById('product-title').innerText = product.title;
-            document.getElementById('product-price').innerText = product.price;
-            document.getElementById('product-description').innerText = product.description;
-
-            const thumbnailContainer = document.getElementById('thumbnail-images');
-            product.images.forEach((image, index) => {
-                const thumbnail = document.createElement('img');
-                thumbnail.src = image;
-                thumbnail.alt = `${product.title} Thumbnail ${index + 1}`;
-                thumbnail.className = 'thumbnail';
-                thumbnail.addEventListener('click', () => {
-                    document.getElementById('main-image').src = image;
-                });
-                thumbnailContainer.appendChild(thumbnail);
-            });
-
-            document.getElementById('add-to-cart-btn').addEventListener('click', () => {
-                alert("Товар добавлен в корзину!");
-                addToCart(productId);
-            });
-        }
-    }
-});
+  });
